@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        📄 PDF Chat Assistant
+    </header>
+
+    <div class="container">
+        <!-- PDF Viewer -->
+        <div class="pdf-viewer">
+            <h3>Upload your PDF</h3>
+            <input type="file" id="pdf-upload" accept="application/pdf">
+            <div id="pdf-container"></div>
+        </div>
+
+        <!-- Chat Panel -->
+        <div class="chat-panel">
+            <div id="chat-box"></div>
+            <div class="chat-input">
+                <input type="text" id="question" placeholder="Type your question...">
+                <button id="ask-btn">Ask</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
